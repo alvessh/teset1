@@ -2,20 +2,31 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Imagem Tela Cheia</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background: black; /* Cor de fundo caso a imagem não preencha */
+      background: black; /* Cor de fundo se imagem não preencher */
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Cobre toda a tela mantendo proporção */
-      display: block;
+      object-fit: cover;
+    }
+
+    /* Ajuste extra para telas pequenas */
+    @media (max-width: 768px) {
+      img {
+        object-position: center center; /* Centraliza melhor no celular */
+      }
     }
   </style>
 </head>
